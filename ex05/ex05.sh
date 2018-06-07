@@ -10,7 +10,7 @@ shift
 re='^-?[0-9]+([.][0-9]+)?$'
 for i in $@; do
 if ! [[ $i =~ $re ]] ; then
-   echo "Error..";  exit 1
+   echo "Error.."; exit 1
 fi
 done
 
@@ -25,7 +25,7 @@ case $flag in
     for i in $@
     do
       if !(($i % 2)); then
-      (( sum += $i ))
+        (( sum += $i ))
       fi
     done
     echo "$sum";;
@@ -33,13 +33,12 @@ case $flag in
     for i in $@
     do
       if (($i % 2)); then
-      (( sum += $i ))
+        (( sum += $i ))
       fi
     done
     echo "$sum";;
   -m)
-    for i in $@
-    do
+    for i in $@; do
       (( sum += $i )) && (( cnt++ ))
     done
     echo "$(($sum/$cnt))";;
